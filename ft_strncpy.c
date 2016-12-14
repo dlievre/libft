@@ -6,11 +6,11 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 16:02:30 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/16 17:45:39 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/11/23 11:50:04 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {

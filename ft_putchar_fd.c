@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/09/07 10:43:10 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 11:57:47 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+** Ecrit le caractère c sur le descripteur de fichier fd.
+*/
+
+void	ft_putchar_fd(char c, int fd)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	write(fd, &c, 1);
 }

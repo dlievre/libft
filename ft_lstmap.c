@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 09:32:04 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/28 18:34:34 by dlievre          ###   ########.fr       */
+/*   Created: 2016/12/08 13:53:14 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/08 13:54:26 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list*))
 {
-	char	*s1bis;
-	int		i;
+	t_list	*newlist;
+	t_list	*ptr1;
+	t_list	*ptr2;
 
-	s1bis = (char *)malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (s1bis == NULL)
-	{
+	if (!lst || !f)
 		return (NULL);
-	}
-	else
+	ptr2 = f(lst);
+	newlist = ft_lstnew(ptr2->content, ptr2->content_size);
+	if (newlist)
 	{
-		i = 0;
-		while (*src != '\0')
-			s1bis[i++] = *src++;
-		s1bis[i] = '\0';
-		return (s1bis);
+		ptr1 = newlist;
+		lst = lst->next;
+		while (lst)
+		{
+			ptr2 = f(lst);
+			ptr1->next = ft_lstnew(ptr2->content, ptr2->content_size);
+			if (!(ptr1->next))
+				return (NULL);
+			ptr1 = ptr1->next;
+			lst = lst->next;
+		}
 	}
+	return (newlist);
 }

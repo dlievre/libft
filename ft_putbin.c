@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putbin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/12/13 18:46:15 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/13 18:46:43 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int		ft_putbin(unsigned bin)
 {
-	while (*s)
+	int mask;
+	int n;
+
+	if (!bin)
+		return (1);
+	mask = 0x8000;
+	n = 16;
+	while (n-- > 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		ft_putchar((mask & bin) == 0x8000 ? '1' : '0');
+		bin = bin << 1;
 	}
-	if (c == '\0')
-		return ((char *)s);
 	return (0);
 }

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/11/25 10:47:20 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 09:51:03 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+** Prend en paramètre l’adresse d’une chaine de caractères qui
+** doit être libérée avec free(3) et son pointeur mis à NULL.
+*/
+
+void	ft_strdel(char **as)
 {
-	while (*s)
+	if (as)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		free(*as);
+		*as = NULL;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }

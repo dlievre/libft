@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/11/25 15:42:00 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 11:58:56 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+** Ecrit la chaine s sur le descripteur de fichier fd.
+*/
+
+void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
+	int index;
+
+	if (s)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		index = 0;
+		while (s[index] != '\0')
+		{
+			ft_putchar_fd(s[index], fd);
+			index++;
+		}
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }

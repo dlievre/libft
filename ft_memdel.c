@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/11/28 09:33:27 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 09:48:15 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+** Prend en paramètre l’adresse d’un pointeur dont la zone pointée
+** doit être libérée avec free(3), puis le pointeur est mis à
+** NULL.
+*/
+
+void	ft_memdel(void **ap)
 {
-	while (*s)
+	if (ap)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		free(*ap);
+		*ap = NULL;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }

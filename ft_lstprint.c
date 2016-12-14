@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/12/08 16:56:36 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/13 11:05:42 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstprint(t_list *lst)
 {
-	while (*s)
+	if (lst != NULL)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		while (lst->next != NULL)
+		{
+			ft_putstr(lst->content);
+			lst = lst->next;
+		}
+		ft_putstr(lst->content);
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
 }

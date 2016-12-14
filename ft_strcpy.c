@@ -6,11 +6,11 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 15:23:12 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/16 17:42:51 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/11/28 18:33:48 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strcpy(char *dst, const char *src)
 {
@@ -18,11 +18,7 @@ char	*ft_strcpy(char *dst, const char *src)
 
 	ptdst = dst;
 	while (*src)
-	{
-		*dst = *src;
-		src++;
-		dst++;
-	}
+		*dst++ = *src++;
 	*dst = '\0';
 	return (ptdst);
 }

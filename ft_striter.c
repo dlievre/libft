@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/11/22 14:17:07 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 09:54:31 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/*
+** Applique la fonction f à chaque caractère de la chaine de
+** caractères passée en paramètre. Chaque caractère est passé
+** par adresse à la fonction f afin de pouvoir être modifié si nécéssaire.
+*/
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	if (s && f)
+		while (*s)
+			f(s++);
 }

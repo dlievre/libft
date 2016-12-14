@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 13:09:32 by dlievre           #+#    #+#             */
-/*   Updated: 2016/11/23 09:52:57 by dlievre          ###   ########.fr       */
+/*   Created: 2016/11/25 15:40:41 by dlievre           #+#    #+#             */
+/*   Updated: 2016/12/06 12:00:24 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+/*
+** Ecrit l’entier n sur le descripteur de fichier fd
+*/
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (*s)
+	long	nbl;
+
+	nbl = n;
+	if (nbl < 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		ft_putchar_fd('-', fd);
+		nbl = nbl * -1;
 	}
-	if (c == '\0')
-		return ((char *)s);
-	return (0);
+	if (nbl / 10 > 0)
+	{
+		ft_putnbr_fd(nbl / 10, fd);
+	}
+	ft_putchar_fd('0' + nbl % 10, fd);
 }
