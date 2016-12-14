@@ -6,7 +6,7 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 18:46:15 by dlievre           #+#    #+#             */
-/*   Updated: 2016/12/14 18:58:30 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/12/14 19:01:29 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_putbin(unsigned bin, int octed)
 {
-	int mask;
+	long mask;
 	int n;
 
 	if (!bin || (octed != 4 && octed != 8))
