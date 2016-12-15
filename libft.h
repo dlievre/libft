@@ -6,7 +6,7 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 18:03:00 by dlievre           #+#    #+#             */
-/*   Updated: 2016/12/15 17:25:21 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/12/15 17:49:01 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 ** fonction de Dlievre
 */
 void				ft_lstprint(t_list *lst);
-int					ft_putbin(unsigned bin, int nl);
+int					ft_putbin(unsigned int bin, int nl);
 int					ft_putbin32(unsigned long bin, int nl);
 void				ft_tblinit(int *tbl, size_t len);
 #endif

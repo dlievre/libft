@@ -6,7 +6,7 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 18:46:15 by dlievre           #+#    #+#             */
-/*   Updated: 2016/12/15 17:37:51 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/12/15 18:01:34 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 #include "libft.h"
 
-int		ft_putbin(unsigned bin, int nl)
+int		ft_putbin(unsigned int bin, int nl)
 {
 	int mask;
 	int n;
@@ -38,14 +38,13 @@ int		ft_putbin(unsigned bin, int nl)
 
 int		ft_putbin32(unsigned long bin, int nl)
 {
-	unsigned long mask;
-	int n;
+	unsigned long	mask;
+	int				n;
 
 	mask = 1;
 	n = 0;
 	while (n++ < 32)
 		mask = mask << 1;
-//	n = 32;
 	while (n-- > 0)
 	{
 		ft_putchar((mask & bin) == mask ? '1' : '0');
