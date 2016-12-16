@@ -6,17 +6,16 @@
 /*   By: dlievre <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 18:46:15 by dlievre           #+#    #+#             */
-/*   Updated: 2016/12/16 14:20:38 by dlievre          ###   ########.fr       */
+/*   Updated: 2016/12/16 15:16:59 by dlievre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** affiche en binaire la variable passee, sous format n x bits
-** bin = 2 ou 4 octeds
+** affiche en binaire la variable passee, sous format n x bits avec
+** bin = 2 ou 4 octeds, un int = 4 octeds en processeur 64bits
 ** 2 octeds = 0xFFFF ou 4 octeds = 0xFFFFFFFF
 ** 2 octeds = 16 bits 0b0000000000000000, 4 = 32bits
 ** nbits permet d'afficher que le nombre souhaite de bits
-** 
 ** pour obtenir un mask de 32 bits on decale le mask a 1 de 32 fois a gauche
 ** le caractere c permet d'afficher un caractere qui suit l'affichage
 */
